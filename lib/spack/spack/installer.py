@@ -43,7 +43,7 @@ import llnl.util.filesystem as fs
 import llnl.util.lock as lk
 import llnl.util.tty as tty
 from llnl.util.tty.color import colorize
-from llnl.util.tty.log import log_output, winlog
+from llnl.util.tty.log import log_output
 
 import spack.binary_distribution as binary_distribution
 import spack.compilers

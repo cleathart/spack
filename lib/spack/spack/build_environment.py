@@ -525,7 +525,6 @@ def _set_variables_for_single_module(pkg, module):
     m.configure = Executable('./configure')
 
     m.meson = Executable('meson')
-    # m.cmake = Executable('cmake')
     m.cmake = Executable('cmake')
     m.ctest = MakeExecutable('ctest', jobs)
 
