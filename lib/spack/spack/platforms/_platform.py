@@ -147,4 +147,4 @@ class Platform(object):
         yield oses
 
     def is_64bit(self):
-        return platform.machine().endswith('64')
+        raise NotImplementedError()

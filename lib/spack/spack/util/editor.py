@@ -40,10 +40,6 @@ def _find_exe_from_env_var(var):
     if not exe:
         return None, []
 
-    if sys.platform == "win32":
-        # Fix separators
-        exe = exe.replace('\\', '/')
-
     # split env var into executable and args if needed
     args = shlex.split(str(exe))
 
