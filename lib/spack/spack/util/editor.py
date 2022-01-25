@@ -14,7 +14,6 @@ raising an EnvironmentError if we are unable to find one.
 """
 import os
 import shlex
-import sys
 
 import llnl.util.tty as tty
 

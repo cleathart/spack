@@ -142,21 +142,20 @@ class Openssl(Package):   # Uses Fake Autotools, should subclass Package
 
         def configure_args():
             base_args = ['--prefix=%s' % prefix,
-                         '--openssldir=%s'\
-                            % join_path(prefix, 'etc', 'openssl'),
-                        ]
+                         '--openssldir=%s'
+                         % join_path(prefix, 'etc', 'openssl')]
             if spec.satisfies('platform=windows'):
                 base_args.extend([
                     'CC=%s' % os.environ.get('CC'),
-                   'CXX=%s' % os.environ.get('CXX'),
-                   '%s' % shared_flag,
-                   'VC-WIN64A',
+                    'CXX=%s' % os.environ.get('CXX'),
+                    '%s' % shared_flag,
+                    'VC-WIN64A',
                 ])
                 base_args.insert(0, 'Configure')
             else:
                 base_args.extend(
                     [
-                       '-I{0}'.format(self.spec['zlib'].prefix.include),
+                        '-I{0}'.format(self.spec['zlib'].prefix.include),
                         '-L{0}'.format(self.spec['zlib'].prefix.lib),
                         *options
                     ]
