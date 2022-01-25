@@ -1110,7 +1110,7 @@ def test_store_different_build_deps():
         # according to the DAG hash (since build deps are excluded from
         # comparison by default). Although the dag hashes are equal, the specs
         # are not considered equal because they compare build deps.
-        assert x_concretized['y'].dag_hash() == y_concretized.dag_hash()
+        assert x_concretized['y'].runtime_hash() == y_concretized.runtime_hash()
 
         _env_create('test', with_view=False)
         e = ev.read('test')
